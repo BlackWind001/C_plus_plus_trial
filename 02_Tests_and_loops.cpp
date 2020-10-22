@@ -1,4 +1,5 @@
 #include <iostream>
+int counter = 0;
 std::string check_with_message(char x){
     switch(x){
         case 'y' : return "If I knew you would say yes, I would have proposed";
@@ -14,11 +15,29 @@ std::string check_with_message(char x){
         }
     }
 }
-int main(){
-    int x;
+bool check_if_yes(char choice){
+    if(choice=='y'||choice=='Y'){
+        return true;
+    }
+    return false;
+}
+int main(){    
     char c;
+    bool loop_reply;
+    std::cout<<"Testing with loops and conditionals\n";
     std::cout<<"Enter your choice (y/n) : ";
     std::cin>>c;
     std::cout<<check_with_message(c)<<"\n";
+    std::cout<<"Enter your loop choice : ";
+    std::cin>>c;
+    while(loop_reply = check_if_yes(c)){
+        counter++;
+        std::cout<<"You said yes : "<<counter<<" times";
+        std::cout<<"\nEnter your loop choice : ";
+        std::cin>>c;
+    }
+    if(!loop_reply){
+        std::cout<<"I can understand\n";
+    }
     return 0;
 }

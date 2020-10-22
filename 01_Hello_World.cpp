@@ -7,6 +7,7 @@ void add(int x, int y){
 }
 int main(){
     int var1 {123}, var2 {234};
+    std::cout<<"Testing with the basics\n";
     std::cin>>var1;
     std::cin>>var2;
     //The get from operator is >>
