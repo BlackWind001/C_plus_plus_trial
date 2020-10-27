@@ -1,6 +1,3 @@
-# User-Defined types
-
-
 ---
 title: "User-Defined types"
 tags: ""
@@ -52,3 +49,34 @@ Note: You can assign values to arrays using pointers in 2 ways as far as I know.
 _where ptr is the array pointer_
 
 After that it is simply a case of doing whatever operations you intend to in hopefully, a readble way unlike mine.
+
+## Classes
+
+In C++ classes, you can access variables/ functions/ elements in general that have been declared as '_public_' while creating objectd of the class while the ones that have been declared '_private_' are accessible only within the class.
+
+One thing to note will be that class declarations in C++ will end with a semi-colon(;) after the curly braces.
+
+For this concept, I recreate the same user-defined type as before named Custom_Vector.
+The elements defined as private are:
+
+-       double *elem
+-       int size
+-       void initialize()
+
+It might be transparent why I declared elem and size as private (since I didn't want any program to be able to access them directly - they should only be accessed through the functions I provided). But `initialize()` was declared private since, I didn't want anyone to be able to access the initializer function more than once ( during the constructor call ). But I think this may be overcome by calling the constructor again - I don't know, need to try.
+
+Update: Checked if I can re-call the constructor on an initialized object. Apparently there are ways but doing so may lead to undefined behaviour.
+
+I added a couple more functions in this case to give more functionality to the bare-bone vector component I'm creating.
+
+While creating an object, you do it as follows:
+
+    Custom_Vector obj;
+
+if you have a default constructor. Or as it is in my case , you go
+
+    Custom_Vector obj(size);
+
+You can access the public elements of the class using the object's `.` operator.
+
+Eg:	`obj.assign()` or `obj.valueAt(index)`
