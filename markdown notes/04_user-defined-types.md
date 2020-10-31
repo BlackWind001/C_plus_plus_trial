@@ -80,3 +80,31 @@ if you have a default constructor. Or as it is in my case , you go
 You can access the public elements of the class using the object's `.` operator.
 
 Eg:	`obj.assign()` or `obj.valueAt(index)`
+
+## Class Enums (*Strongly typed*)
+
+Enums are a simple form of user-defined values using which we can enumerate values.
+
+We will currently discuss strongly typed class enums. The plain enums to which we can directly assign `int`s without explicit conversion will be discussed later.
+
+The following is an example of how to declare a class enum:
+
+	enum class Fruit {APPLE, BANANA, TOMATO};
+    
+And the following is an example of how we create an object of the enum:
+
+	Fruit a = Fruit::APPLE;
+    
+It is advised that you declare an `enum` outside a function since I faced an error when I tried to declare an operator function for the `enum`. Too tired to reproduce it and paste it here.
+
+One thing to keep in mind. This `enum class` that has been created has no operators except the assignment operator as far as I understand.
+
+Which is why operations like
+
+	std::cout<<a;
+
+will fail or throw an error. You need to explicitly define operators for them.
+
+For now, I was unable to declare a `put to` operator (<<) for these `enum`s. Apparently they are different from operators like say, the pre-increment operator.
+
+Using current knowledge, it is possible to declare a pre-increment operator though.
