@@ -1,6 +1,8 @@
 #include <iostream>
 #include "05_separate_compilation_01_declaration.h"
 
+//For more information about the following constructor syntax check the following link.
+//https://www.geeksforgeeks.org/when-do-we-use-initializer-list-in-c/
 Vector::Vector(int size = 0) : sz(size)
 {
 	elem = new double[sz];
