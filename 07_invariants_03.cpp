@@ -1,6 +1,7 @@
 #include "07_invariants_01.h"
 #include <iostream>
 
+//The 'invariants' is a topic that I did not understand completely and hence this file will later be modifed
 void assigning_decision(bool& should_assign, Vector obj)
 {
 	char choice;

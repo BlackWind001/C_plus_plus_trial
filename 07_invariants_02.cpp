@@ -1,6 +1,7 @@
 #include "07_invariants_01.h"
 #include <iostream>
 
+//The 'invariants' is a topic that I did not understand completely and hence this file will later be modifed
 Vector::Vector(int sz, bool should_assign = false) : size(sz), is_assigned(should_assign)
 {
 	if(size<0)
